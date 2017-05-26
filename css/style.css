@@ -1,17 +1,30 @@
-body,
-div,
-ul,
-li,
-p,
+* {
+  padding: 0;
+  margin: 0;
+
+}
+
+body {
+  font-family: 'Poiret One', cursive;
+
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+
+  font-family: 'Sacramento', cursive;
+
+}
+
+div,
+ul,
+li,
+p {
+  font-family: 'Josefin Slab', serif;
 }
 
 .clear-fix {
@@ -127,9 +140,20 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+    background: url(../images/dots3.png) repeat-y center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;
+}
+
+.overlay {
+  background-color: #005952;
+  opacity: 0.5;
+  display: -webkit-flex;
+  display: flex;
+  padding: 15%;
 }
 
 .flex-box {
@@ -169,6 +193,7 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 50%;
 }
 
 img {

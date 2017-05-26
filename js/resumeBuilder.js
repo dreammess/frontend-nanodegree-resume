@@ -15,20 +15,23 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio = {
     "name" : "Magdalena",
     "role" : "Front-End Ninja",
-    "pictureURL" : "images/fry.jpg",
-    "welcomeMsg" : "Bry!",
-    "skills" : [
-        "Fluffing!",
-        "Reaching for the Moon",
-        "Letting stars shine at night"
-    ],
-    "languages" : ["English", "Polish", "German"],
     "contacts" : {
         "email" : "magdalena.r.stevens@gmail.com",
         "phone" : "+4366403730352",
         "github" : "github.com/dreammess",
         "location": "Salzburg, Austria"
-        }
+        },
+    "welcomeMsg" : "Bry!",
+    "skills" : [
+        "CSS",
+        "HTML",
+        "Basic JavaScript",
+        "Bootstrap",
+        "jQuery",
+        "JSON",
+        "languages: English, Polish, German"
+    ],
+    "biopic" : "images/Moi.png"
 };
 
 
@@ -211,7 +214,7 @@ var formattedName = HTMLheaderName.replace("%data%", name);
 var role = bio.role;
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-var pictureURL = bio.pictureURL;
+var pictureURL = bio.biopic;
 var formattedPic = HTMLbioPic.replace("%data%", pictureURL);
 
 var welcomeMsg = bio.welcomeMsg;
@@ -228,9 +231,9 @@ var formattedGithub = HTMLgithub.replace("%data%", github);
 
 
 
-$("#header").prepend(formattedMsg);
+$(".overlay").prepend(formattedMsg);
 $("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+$(".overlay").prepend(formattedName);
 $("#header").prepend(formattedPic);
 
 
