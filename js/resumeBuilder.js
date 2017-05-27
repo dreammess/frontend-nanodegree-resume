@@ -231,10 +231,10 @@ var formattedGithub = HTMLgithub.replace("%data%", github);
 
 
 
-$(".overlay").prepend(formattedMsg);
-$("#header").prepend(formattedRole);
-$(".overlay").prepend(formattedName);
-$("#header").prepend(formattedPic);
+$("#header .overlay").prepend(formattedMsg);
+$("#header .overlay").prepend(formattedRole);
+$("#header .overlay").prepend(formattedName);
+$("#header .overlay").prepend(formattedPic);
 
 
 $("#topContacts").append(formattedEmail);
@@ -242,7 +242,7 @@ $("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedGithub);
 
 
-$('#header').append(HTMLskillsStart);
+$('#header .overlay').append(HTMLskillsStart);
 
 if (bio.skills.length > 0) {
      bio.skills.forEach (function(skill, index) {
