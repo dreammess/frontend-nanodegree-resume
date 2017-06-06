@@ -1,37 +1,73 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
-//  var awesomeThoughts = "I am Magdalena and I am AWESOME";
-//  console.log(awesomeThoughts);
-
-//  var newAwsomeThoughts =
-//     awesomeThoughts.replace("AWESOME", "FUN");
-
-// $("#main").append(newAwsomeThoughts);
-
-
 // BIO
+
 var bio = {
-    "name" : "Magdalena",
-    "role" : "Front-End Ninja",
+    "name" : "Magdalena Stevens",
+    "role" : " Front-End Ninja",
     "contacts" : {
         "email" : "magdalena.r.stevens@gmail.com",
         "phone" : "+4366403730352",
         "github" : "github.com/dreammess",
         "location": "Salzburg, Austria"
         },
-    "welcomeMsg" : "Bry!",
+    "welcomeMsg" : "Learning Front-End with Udacity and looking for ways to combine my artistic side with everyday life.",
     "skills" : [
         "CSS",
         "HTML",
         "Basic JavaScript",
         "Bootstrap",
         "jQuery",
+        "P5",
         "JSON",
-        "languages: English, Polish, German"
+        "WordPress",
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Gimp",
+        "Corel Draw",
+        "Languages: English, Polish, German"
     ],
     "biopic" : "images/Moi.png"
+};
+
+var name = bio.name;
+var formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = bio.role;
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+var pictureURL = bio.biopic;
+var formattedPic = HTMLbioPic.replace("%data%", pictureURL);
+
+var welcomeMsg = bio.welcomeMsg;
+var formattedMsg = HTMLwelcomeMsg.replace("%data%", welcomeMsg);
+
+var email = bio.contacts.email;
+var formattedEmail = HTMLemail.replace("%data%", email);
+
+var phone = bio.contacts.phone;
+var formattedMobile = HTMLmobile.replace("%data%", phone);
+
+var github = bio.contacts.github;
+var formattedGithub = HTMLgithub.replace("%data%", github);
+
+
+$("#header .overlay").prepend(formattedMsg);
+$("#header .overlay").prepend(formattedRole);
+$("#header .overlay").prepend(formattedName);
+$("#header .overlay").prepend(formattedPic);
+
+
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedGithub);
+
+
+$('#header .overlay').append(HTMLskillsStart);
+
+if (bio.skills.length > 0) {
+     bio.skills.forEach (function(skill, index) {
+        var formattedSkill = HTMLskills.replace("%data%", skill);
+        $('#skills').append(formattedSkill);
+});
 };
 
 
@@ -45,7 +81,6 @@ var education = {
         "degree" : "Fashion Designer Diploma",
         "majors" : "Artistic Fashion Design, Jewelry",
         "dates" : "2010 - 2014"
-        // "url" : "http://www.ksa.edu.pl/fashion-college-english"
     },
         {
         "name" : "The Social High School of United Europe",
@@ -53,7 +88,6 @@ var education = {
         "degree" : "High School Diploma and Matura",
         "majors" : "English, Polish Literature, Maths",
         "dates" : "2007 - 2010"
-        // "url" : "http://www.szkoladlawas.pl/liceum"
     }
     ],
     "onlineCourses" : [
@@ -126,33 +160,43 @@ var work = {
         "title" : "Receptionist",
         "location" : "Salzburg, Austria",
         "dates" : "May 2016 - current",
-        "description" : `<ul class = "bullets">
-            <li>Fluff</li>
-            <li>Fluff</li>
-            <li>Fluff</li>
-            <li>Fluff</li>
-        </ul>`
+        "description" : `<ul ><li class="jobs-list">Using my language, people and organizational skills to concquer new, Austrian life.</li>
+        <li class="jobs-list">Handling e-mails, reservations and customer requests.</li>
+        <li class="jobs-list">Finding solutions to all problems large and small as they araise.</li>
+        <li class="jobs-list">Learning and multitasking all day everyday.</li></ul>`
+
     },
     {
         "employer" : "Earthy Foods & Goods",
         "title" : "Head of Fruit and Veg Department and Duty Manager",
         "location" : "Edinburgh, Scotland, UK",
         "dates" : "August 2014 - December 2015",
-        "description" : ""
+        "description" : `<ul><li class="jobs-list">Responsible for international \
+        and local orderings for 3 retail branches.</li>
+        <li class = "jobs-list">Continually adjusting pricing to selectively \
+        improve margins of profit, increse competitiveness and exeed targets \
+        to achieve record sales and maintain strong growth in my department.</li>
+        <li class = "jobs-list"> Using vm to wow the eye and place high-profit \
+        items front and center in fresh, seasonally-oriented, ever-changing ways.</li>
+        <li class = "jobs-list">Designing marketing materials and comercial \
+        campains using Adobe Photoshop and Corel Draw.</li>
+        <li class = "jobs-list">Banking and parts of bookkeeping in Microsoft Excel.</li><ul>`
     },
     {
         "employer" : "Frankie and Bennys Omni Centre",
         "title" : "Bar Supervisor",
         "location" : "Edinburgh, Scotland, UK",
         "dates" : "July 2013 - August 2014",
-        "description" : ""
+        "description" :`<ul><li class = "jobs-list">Responsible for orders and weekly stock checks.</li>
+        <li class = "jobs-list">Managing and training a small team and cooerating with floor staff.</li>
+        <li class = "jobs-list">Introducing newideas and developing more efficient bar work solutions.</li></ul>`
     },
     {
         "employer" : "Celtic Pub",
         "title" : "Bar Supervisor",
         "location" : "Rybnik, Poland",
         "dates" : "April - September 2010",
-        "description" : ""
+        "description" : "Working fast paste in the most popular pub in town while finishing high school."
     }
     ]
 }
@@ -183,13 +227,13 @@ work.display();
       {
          "title": "Online Resume",
          "dates": "May 2017",
-         "description": "" + "Technologies used: HTML, CSS, JS, Bootstrap.",
+         "description": "Responsive Portfolio made using HTML, CSS, JS, Bootstrap and Media Queries and even sneaking modal into the code.",
          "images": ["images/online_portfolio.png"]
      },
      {
          "title": "Animal Trading Card",
          "dates": "April 2017",
-         "description": "First CSS project using HTML and CSS.",
+         "description": "First Udacity CSS project using HTML and CSS.",
          "images": ["images/animal_trading_card.png"]
      }]
  };
@@ -207,48 +251,5 @@ work.display();
 
 projects.display();
 
-// BIO
-var name = bio.name;
-var formattedName = HTMLheaderName.replace("%data%", name);
-
-var role = bio.role;
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-var pictureURL = bio.biopic;
-var formattedPic = HTMLbioPic.replace("%data%", pictureURL);
-
-var welcomeMsg = bio.welcomeMsg;
-var formattedMsg = HTMLwelcomeMsg.replace("%data%", welcomeMsg);
-
-var email = bio.contacts.email;
-var formattedEmail = HTMLemail.replace("%data%", email);
-
-var phone = bio.contacts.phone;
-var formattedMobile = HTMLmobile.replace("%data%", phone);
-
-var github = bio.contacts.github;
-var formattedGithub = HTMLgithub.replace("%data%", github);
-
-
-
-$("#header .overlay").prepend(formattedMsg);
-$("#header .overlay").prepend(formattedRole);
-$("#header .overlay").prepend(formattedName);
-$("#header .overlay").prepend(formattedPic);
-
-
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedGithub);
-
-
-$('#header .overlay').append(HTMLskillsStart);
-
-if (bio.skills.length > 0) {
-     bio.skills.forEach (function(skill, index) {
-        var formattedSkill = HTMLskills.replace("%data%", skill);
-        $('#skills').append(formattedSkill);
-});
-};
-
+//MAP
 $('#mapDiv').append(googleMap);

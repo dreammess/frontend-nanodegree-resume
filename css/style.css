@@ -1,7 +1,10 @@
 * {
-  padding: 0;
-  margin: 0;
-
+    box-sizing: border-box;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;
+    border-radius: 15px;
 }
 
 body {
@@ -15,7 +18,6 @@ h3,
 h4,
 h5,
 h6 {
-
   font-family: 'Sacramento', cursive;
 
 }
@@ -31,10 +33,24 @@ p {
   overflow: auto;
 }
 
+.all {
+  text-align: center;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  background-position: 50% 50%;
+  background: url(../images/greenblue7.png) repeat-y center center fixed
+
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  margin-left: 150px;
+  margin-right: 150px;
+  text-align: center;
 }
 
 h1 {
@@ -46,60 +62,58 @@ h1 {
 
 h2 {
   font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+  font-size: 36px;
+  color: #ffd11a;
+  line-height: 38px;
+  padding: 5px;
 }
 
 h3 {
   font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+  font-size: 28px;
+  color: #ccd248;
+  line-height: 30px;
 }
 
 h4 {
   font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+  font-size: 24px;
+  color: #86b300;
+  line-height: 26px;
 }
 
-h2,
+/*h2,
 h3,
 h4,
 h5 {
-  padding: 10px 5%;
+  padding: 5px 2.5%;
 
-}
+}*/
 
 
 .date-text {
   font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
+  font-size: 18px;
+  color: #ccff33;
+  line-height: 18px;
 }
 
 .location-text {
   font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+  font-size: 18px;
+  color: #ffd11a;
+  line-height: 18px;
 }
 
 p {
-  font-size: 14px;
-  color: #333;
+  font-size: 20px;
+  color: #fff;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
+  font-size: 22px;
+  color: #a1e3f7;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -108,13 +122,13 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+  color: #a1e3f7;
+  line-height: 22px;
 }
 
 #skills-h3 {
   color: #f5ae23;
-  display: none;
+  margin-left: 200px;
 }
 
 .orange {
@@ -130,14 +144,28 @@ a {
   color: #fff;
 }
 
+li.flex-item:first-child {
+  margin-left: 100px;
+}
+
 .gray {
-  background-color: #f3f3f3;
+  background-color: rgba( 5, 113, 91, 0.3);
+  border-radius: 15px;
   padding-bottom: 10px;
+  margin: auto;
+  clear: both;
+}
+
+.blue{
+  background-color: rgba( 0, 153, 255, 0.2);
+  border-radius: 15px;
+  padding-bottom: 10px;
+  margin: auto;
   clear: both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #05715b;
 }
 
 #header {
@@ -150,6 +178,7 @@ a {
 
 .overlay {
   background-color: rgba(0, 89, 82, 0.5);
+  border-radius: 15px;
 }
 
 .flex-box {
@@ -158,14 +187,18 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
 }
 
 .flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
-  padding: 10px;
+}
+
+.flex-item {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
 }
 
 .center-content {
@@ -173,22 +206,31 @@ a {
 }
 
 ul {
-  list-style-type: none;
+  padding: 20px;
+  list-style-position: inside;
+  list-style-type: circle;
+  clear: both;
+}
+
+li.jobs-list {
+  padding-top: 0;
+  color:aliceblue;
+  font-size: 20px;
+  list-style-position: inside;
 }
 
 .bullets {
   list-style-type: circle;
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+  font-size: 20px;
+  color: #fff;
 }
-
 
 .biopic {
   float: left;
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 50%;
 }
 
 img {
@@ -197,6 +239,12 @@ img {
 
 span {
   padding: 5px;
+}
+
+#skills {
+  margin-left: 150px;
+  margin-right: 150px;
+  text-align: center;
 }
 
 #lets-connect {
