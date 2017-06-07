@@ -28,8 +28,7 @@ var bio = {
     "biopic" : "images/Moi.png"
 };
 
-var name = bio.name;
-var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
 var role = bio.role;
 var formattedRole = HTMLheaderRole.replace("%data%", role);
@@ -68,7 +67,7 @@ if (bio.skills.length > 0) {
         var formattedSkill = HTMLskills.replace("%data%", skill);
         $('#skills').append(formattedSkill);
 });
-};
+}
 
 
 //EDU
@@ -120,7 +119,7 @@ var education = {
         "url" : "https://teamtreehouse.com/home"
     }
     ]
-}
+};
 
 
 education.schools.forEach(function(school, index) {
@@ -203,7 +202,7 @@ var work = {
         "description" : "Working fast paste in the most popular pub in town while finishing high school."
     }
     ]
-}
+};
 
 work.display = function () {
     work.jobs.forEach(function(job, index) {
