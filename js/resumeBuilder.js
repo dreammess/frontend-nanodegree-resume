@@ -83,7 +83,7 @@ var education = {
         "dates" : "2010 - 2014"
     },
         {
-        "name" : "The Social High School of United Europe",
+        "name" : "THE SOCIAL HIGH SCHOOL OF UNITED EUROPE",
         "location" : "Zory, Poland",
         "degree" : "High School Diploma and Matura",
         "majors" : "English, Polish Literature, Maths",
@@ -93,24 +93,28 @@ var education = {
     "onlineCourses" : [
     {
         "title" : "Front-End Web Developer Nanodegree Program",
+        "name" : "UDACITY",
         "school" : "Udacity",
         "date" : "2017",
-        "url" : "https://www.udacity.com/"
+        "url" : "https://www.udacity.com/",
     },
     {
         "title" : "CSS Basics & CSS Selectors",
+        "name" : "TREEHOUSE",
         "school" : "Treehouse",
         "date" : "2017",
-        "url" : "https://teamtreehouse.com/home"
+        "url" : "https://teamtreehouse.com/home",
     },
     {
         "title" : "JavaScript Basics",
+        "name" : "TREEHOUSE",
         "school" : "Treehouse",
         "date" : "2017",
         "url" : "https://teamtreehouse.com/home"
     },
     {
         "title" : "WordPress Basics & User Roles",
+        "name" : "TREEHOUSE",
         "school" : "Treehouse",
         "date" : "2017",
         "url" : "https://teamtreehouse.com/home"
@@ -139,13 +143,14 @@ $('#education').append(HTMLonlineClasses);
 education.onlineCourses.forEach(function(online, index) {
     $('#education').append(HTMLschoolStart);
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
+    var formattedOnlineURL = HTMLonlineURL.replace("#", online.url).replace("%data%", online.name);
     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
     var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.date);
-    var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.url);
     $('.education-entry:last').append(formattedOnlineTitle);
+    $('.education-entry:last').append(formattedOnlineURL);
     $('.education-entry:last').append(formattedOnlineSchool);
     $('.education-entry:last').append(formattedOnlineDates);
-    $('.education-entry:last').append(formattedOnlineURL);
+
 
 
 
@@ -163,8 +168,7 @@ var work = {
         "description" : `<ul ><li class="jobs-list">Using my language, people and organizational skills to concquer new, Austrian life.</li>
         <li class="jobs-list">Handling e-mails, reservations and customer requests.</li>
         <li class="jobs-list">Finding solutions to all problems large and small as they araise.</li>
-        <li class="jobs-list">Learning and multitasking all day everyday.</li></ul>`
-
+        <li class="jobs-list">Learning and multitasking all day everyday.</li></ul><br>`
     },
     {
         "employer" : "Earthy Foods & Goods",
@@ -180,7 +184,7 @@ var work = {
         items front and center in fresh, seasonally-oriented, ever-changing ways.</li>
         <li class = "jobs-list">Designing marketing materials and comercial \
         campains using Adobe Photoshop and Corel Draw.</li>
-        <li class = "jobs-list">Banking and parts of bookkeeping in Microsoft Excel.</li><ul>`
+        <li class = "jobs-list">Banking and parts of bookkeeping in Microsoft Excel.</li></ul><br>`
     },
     {
         "employer" : "Frankie and Bennys Omni Centre",
@@ -189,7 +193,7 @@ var work = {
         "dates" : "July 2013 - August 2014",
         "description" :`<ul><li class = "jobs-list">Responsible for orders and weekly stock checks.</li>
         <li class = "jobs-list">Managing and training a small team and cooerating with floor staff.</li>
-        <li class = "jobs-list">Introducing newideas and developing more efficient bar work solutions.</li></ul>`
+        <li class = "jobs-list">Introducing newideas and developing more efficient bar work solutions.</li></ul><br>`
     },
     {
         "employer" : "Celtic Pub",
@@ -225,16 +229,22 @@ work.display();
    var projects = {
       "projects" : [
       {
-         "title": "Online Resume",
+         "title": "RESPONSIVE PORTFOLIO",
          "dates": "May 2017",
-         "description": "Responsive Portfolio made using HTML, CSS, JS, Bootstrap and Media Queries and even sneaking modal into the code.",
+         "description": "Responsive Portfolio made using HTML, CSS, JS, Bootstrap and Media Queries and even sneaking a Modal into the code.",
          "images": ["images/online_portfolio.png"]
      },
      {
-         "title": "Animal Trading Card",
+         "title": "ANIMAL TRADING CARDS",
          "dates": "April 2017",
          "description": "First Udacity CSS project using HTML and CSS.",
          "images": ["images/animal_trading_card.png"]
+     },
+     {
+         "title": "WORDPRESS BLOG",
+         "dates": "December 2016",
+         "description": "First website created in WordPress.",
+         "images": ["images/Recenzjantka.png"]
      }]
  };
 
