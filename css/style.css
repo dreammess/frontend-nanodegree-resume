@@ -275,6 +275,12 @@ a {
   text-align: center;
 }
 
+.footCont {
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+
 /*IMAGES*/
 
 .biopic {

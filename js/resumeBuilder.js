@@ -27,48 +27,50 @@ var bio = {
     ],
     "biopic" : "images/Moi.png"
 };
-
+bio.display = function() {
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
-var role = bio.role;
-var formattedRole = HTMLheaderRole.replace("%data%", role);
+    var role = bio.role;
+    var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-var pictureURL = bio.biopic;
-var formattedPic = HTMLbioPic.replace("%data%", pictureURL);
+    var pictureURL = bio.biopic;
+    var formattedPic = HTMLbioPic.replace("%data%", pictureURL);
 
-var welcomeMsg = bio.welcomeMsg;
-var formattedMsg = HTMLwelcomeMsg.replace("%data%", welcomeMsg);
+    var welcomeMsg = bio.welcomeMsg;
+    var formattedMsg = HTMLwelcomeMsg.replace("%data%", welcomeMsg);
 
-var email = bio.contacts.email;
-var formattedEmail = HTMLemail.replace("%data%", email);
+    var email = bio.contacts.email;
+    var formattedEmail = HTMLemail.replace("%data%", email);
 
-var phone = bio.contacts.phone;
-var formattedMobile = HTMLmobile.replace("%data%", phone);
+    var phone = bio.contacts.phone;
+    var formattedMobile = HTMLmobile.replace("%data%", phone);
 
-var github = bio.contacts.github;
-var formattedGithub = HTMLgithub.replace("%data%", github);
-
-
-$("#header .overlay").prepend(formattedMsg);
-$("#header .overlay").prepend(formattedRole);
-$("#header .overlay").prepend(formattedName);
-$("#header .overlay").prepend(formattedPic);
+    var github = bio.contacts.github;
+    var formattedGithub = HTMLgithub.replace("%data%", github);
 
 
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedGithub);
+    $("#header .overlay").prepend(formattedMsg);
+    $("#header .overlay").prepend(formattedRole);
+    $("#header .overlay").prepend(formattedName);
+    $("#header .overlay").prepend(formattedPic);
 
 
-$('#header .overlay').append(HTMLskillsStart);
+    $("#topContacts, #footerContacts").append(formattedEmail);
+    $("#topContacts, #footerContacts").append(formattedMobile);
+    $("#topContacts, #footerContacts").append(formattedGithub);
 
-if (bio.skills.length > 0) {
-     bio.skills.forEach (function(skill, index) {
-        var formattedSkill = HTMLskills.replace("%data%", skill);
-        $('#skills').append(formattedSkill);
-});
-}
 
+    $('#header .overlay').append(HTMLskillsStart);
+
+    if (bio.skills.length > 0) {
+         bio.skills.forEach (function(skill, index) {
+            var formattedSkill = HTMLskills.replace("%data%", skill);
+            $('#skills').append(formattedSkill);
+    });
+    }
+};
+
+bio.display();
 
 //EDU
 
@@ -78,7 +80,7 @@ var education = {
         "name" : "CRACOW SCHOOL OF ART AND FASHION DESIGN",
         "location" : "Cracow, Poland",
         "degree" : "Fashion Designer Diploma",
-        "majors" : "Artistic Fashion Design, Jewelry",
+        "majors" : ["Artistic Fashion Design", " Jewelry"],
         "dates" : "2010 - 2014"
     },
         {
@@ -121,39 +123,38 @@ var education = {
     ]
 };
 
-
-education.schools.forEach(function(school, index) {
-    $('#education').append(HTMLschoolStart);
-    var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
-    var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
-    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
-    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-    var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", school.majors);
-    $('.education-entry:last').append(formattedSchoolName);
-    $('.education-entry:last').append(formattedSchoolDates);
-    $('.education-entry:last').append(formattedSchoolLocation);
-    $('.education-entry:last').append(formattedSchoolDegree);
-    $('.education-entry:last').append(formattedSchoolMajors);
-
-
-});
-
-$('#education').append(HTMLonlineClasses);
-education.onlineCourses.forEach(function(online, index) {
-    $('#education').append(HTMLschoolStart);
-    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
-    var formattedOnlineURL = HTMLonlineURL.replace("#", online.url).replace("%data%", online.name);
-    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
-    var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.date);
-    $('.education-entry:last').append(formattedOnlineTitle);
-    $('.education-entry:last').append(formattedOnlineURL);
-    $('.education-entry:last').append(formattedOnlineSchool);
-    $('.education-entry:last').append(formattedOnlineDates);
+education.display = function() {
+    education.schools.forEach(function(school, index) {
+        $('#education').append(HTMLschoolStart);
+        var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", school.majors);
+        $('.education-entry:last').append(formattedSchoolName);
+        $('.education-entry:last').append(formattedSchoolDates);
+        $('.education-entry:last').append(formattedSchoolLocation);
+        $('.education-entry:last').append(formattedSchoolDegree);
+        $('.education-entry:last').append(formattedSchoolMajors);
 
 
+    });
 
+    $('#education').append(HTMLonlineClasses);
+    education.onlineCourses.forEach(function(online, index) {
+        $('#education').append(HTMLschoolStart);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
+        var formattedOnlineURL = HTMLonlineURL.replace("#", online.url).replace("%data%", online.name);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.date);
+        $('.education-entry:last').append(formattedOnlineTitle);
+        $('.education-entry:last').append(formattedOnlineURL);
+        $('.education-entry:last').append(formattedOnlineSchool);
+        $('.education-entry:last').append(formattedOnlineDates);
+    });
+};
 
-});
+education.display();
 
 // WORK
 
@@ -248,13 +249,15 @@ work.display();
  };
 
  projects.display = function() {
-     projects.projects.forEach(function(project, index) {
+     projects.projects.forEach(function(project) {
          $("#projects").append(HTMLprojectStart);
-
          $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", project.title));
          $(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
          $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project.description));
-         $(".project-entry:last").append(HTMLprojectImage.replace("%data%", project.images));
+
+         project.images.forEach(function(image) {
+            $(".project-entry:last").append(HTMLprojectImage.replace("%data%", image));
+        });
      });
  };
 
